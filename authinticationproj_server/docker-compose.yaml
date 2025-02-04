@@ -1,0 +1,54 @@
+services:
+  # Development services
+  postgres:
+    image: postgres:16.3
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: authinticationproj
+      POSTGRES_PASSWORD: "HL7WnF3JtuGPO9f1jgJfX9pYg_ksuiov"
+    volumes:
+      - authinticationproj_data:/var/lib/postgresql/data
+    profiles:
+      - '' # Default profile
+      - dev
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "Q1DsWQngsmVJ8RVZBBCMu8qZCkRsLoqR"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    profiles:
+      - '' # Default profile
+      - dev
+
+  # Test services
+  postgres_test:
+    image: postgres:16.3
+    ports:
+      - '9090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: authinticationproj_test
+      POSTGRES_PASSWORD: "tCBDA7QhtESh6k4Eu_IWKpTobIrpPkA2"
+    volumes:
+      - authinticationproj_test_data:/var/lib/postgresql/data
+    profiles:
+      - '' # Default profile
+      - test
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - '9091:6379'
+    command: redis-server --requirepass "xNIDOSnT83Er7srIi9NqPECPHNWa2OeL"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    profiles:
+      - '' # Default profile
+      - test
+
+volumes:
+  authinticationproj_data:
+  authinticationproj_test_data:

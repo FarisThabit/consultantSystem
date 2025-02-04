@@ -1,0 +1,19 @@
+{
+  "moduleName": "authinticationproj",
+  "tables": [],
+  "installedModules": [
+    {
+      "module": "serverpod",
+      "version": "20240516151843329"
+    },
+    {
+      "module": "serverpod_auth",
+      "version": "20240520102713718"
+    },
+    {
+      "module": "authinticationproj",
+      "version": "20250202135319673"
+    }
+  ],
+  "migrationApiVersion": 1
+}
