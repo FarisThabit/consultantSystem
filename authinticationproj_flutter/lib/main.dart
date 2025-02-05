@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Serverpod Example'),
+      home: const MyHomePage(title: 'Serverpod Example1'),
     );
   }
 }
@@ -63,5 +63,19 @@ void initState() {
       ),
       body: sessionManager.isSignedIn ? const AccountPage() : const SignInPage(),
     );
+  }
+}
+
+class TestGitHubBranches extends StatefulWidget {
+  const TestGitHubBranches({super.key});
+
+  @override
+  State<TestGitHubBranches> createState() => _TestGitHubBranchesState();
+}
+
+class _TestGitHubBranchesState extends State<TestGitHubBranches> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
