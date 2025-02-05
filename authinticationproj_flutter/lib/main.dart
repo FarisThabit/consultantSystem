@@ -67,7 +67,7 @@ void initState() {
 }
 
 class TestGitHubBranches extends StatefulWidget {
-  // This command is added at GitHub directly to test the pull request
+
   const TestGitHubBranches({super.key});
 
   @override
